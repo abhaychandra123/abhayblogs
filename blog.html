@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhay Chandra</title>
+  <style>
+     .toggle-mode-button {
+      position: fixed;
+      top: 0;
+      right: 0;
+      padding: 10px;
+      background: #666;
+      border: none;
+      color: #fff;
+      border-radius: 0 0 0 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .toggle-mode-button:hover {
+      background: #888;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #4e54c8, #8f94fb);
+      color: #fff;
+      transition: background 0.5s ease;
+    }
+
+    body.dark-mode {
+      background: linear-gradient(to right, #282c36, #4e54c8);
+      color: #fff;
+    }
+
+    header {
+      padding: 20px;
+      text-align: center;
+      background: #333;
+      animation: slideInDown 1s ease;
+    }
+
+    @keyframes slideInDown {
+      from {
+        transform: translateY(-50%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      background: #444;
+      padding: 10px;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #8f94fb;
+    }
+
+    section {
+      padding: 20px;
+      animation: fadeInUp 1s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .blog {
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #555;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .blog:hover {
+      transform: scale(1.05);
+    }
+
+    .blog h3 {
+      margin-bottom: 10px;
+      font-size: 1.5em;
+    }
+
+    .blog p {
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Abhay Chandra</h1>
+  </header>
+
+  <nav>
+    <a href="#blogs">BLOGS</a>
+    <a href="#awesome-things">AWESOME THINGS</a>
+    <a href="#portfolio">PORTFOLIO</a>
+    <a href="#social-media">SOCIAL MEDIA</a>
+    <a href="#about-me">ABOUT ME</a>
+    <button class="random-blog-button" onclick="openRandomBlog()">Random Blog</button>
+  </nav>
+
+  <button class="toggle-mode-button" onclick="toggleDarkMode()">Toggle Mode</button>
+  
+  <section id="blogs">
+    <h2>BLOGS</h2>
+    <div class="blog" onclick="openRandomBlog()">
+      <h3>The Pursuit of Happiness</h3>
+      <p>
+        Happiness is not something ready-made. It comes from your own actions. In the journey of life, finding joy in the little things is the key to a fulfilling existence.
+      </p>
+    </div>
+    <div class="blog" onclick="openRandomBlog()">
+      <h3>The Art of Mindfulness</h3>
+      <p>
+        In the chaos of the modern world, mindfulness serves as a powerful tool to reconnect with the present moment and find peace within ourselves.
+      </p>
+    </div>
+  </section>
+
+  <section id="awesome-things">
+    <h2>AWESOME THINGS</h2>
+    <!-- Content about awesome things -->
+  </section>
+
+  <section id="portfolio">
+    <h2>PORTFOLIO</h2>
+    <!-- Your portfolio content goes here -->
+  </section>
+
+  <section id="social-media">
+    <h2>SOCIAL MEDIA</h2>
+    <!-- Links to your social media profiles -->
+  </section>
+
+  <section id="about-me">
+    <h2>ABOUT ME</h2>
+    <p>
+      I am Abhay Chandra, a first-year student at IIT Bombay studying Chemical Engineering. I love to learn, think, explore, and talk about new ideas. I also love coding and web development. Love to workout.
+    </p>
+  </section>
+
+    <script>
+    function openRandomBlog() {
+      // Logic to open a random blog post
+      const blogs = document.querySelectorAll('.blog');
+      const randomIndex = Math.floor(Math.random() * blogs.length);
+      // Implement logic to open the blog at the randomIndex
+      alert('Opening a random blog!');
+    }
+  </script>
+
+
+  <script>
+    const body = document.body;
+
+    function toggleDarkMode() {
+      body.classList.toggle('dark-mode');
+    }
+  </script>
+
+</body>
+</html>
